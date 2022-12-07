@@ -1,0 +1,65 @@
+.topic {
+    text-align: center;
+    position: relative;
+}
+
+.topic:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;/*線の上下位置*/
+    display: inline-block;
+    width: 60px;/*線の長さ*/
+    height: 3px;/*線の太さ*/
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);/*位置調整*/
+    background-color: black;/*線の色*/
+}
+
+#reason-field {
+    background-color: #FF2A2A;
+    height: 600px;
+}
+
+.reason-element {
+    color: #FF2A2A;
+    font-weight: bold;
+}
+
+.reason-boxes {
+    display: flex;
+    /* width: 400px; */
+    /* height: 100px; */
+    /* margin: 20px 40px;
+    padding: 20px 40px;
+    border-radius: 20px;
+    background-color: white; */
+}
+
+.reason-boxes:nth-child(even) {
+    flex-direction: row-reverse;
+    margin: 20px -40px 20px 20px;
+}
+
+.reason-box {
+    background-color: white;
+    width: 400px;
+    height: 100px;
+    display: flex;
+    border-radius: 20px;
+    margin: 20px 20px 20px -20px;
+    padding: 20px 40px;
+}
+
+/* .reason-box img {
+    width: 70px;
+    height: 50px;
+} */
+
+.reason-box p {
+    text-align: center;
+}
+
+.student-img {
+    background-color: #E8E8E8;
+}

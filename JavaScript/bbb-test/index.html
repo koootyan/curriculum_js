@@ -9,21 +9,32 @@
 </head>
 <body>
     <header>
-        <a href="#"><img src="img/logo-r.svg" alt=""></a>
-        <nav>
-            <ul>
-                <li><a href="#choose-reason">BBBが選ばれる理由</a></li>
-                <li><a href="#student-opinion">受講生の声</a></li>
-                <li><a href="#school-overview">スクールの概要</a></li>
-                <li><a href="#">無料体験に申し込む</a></li>
-            </ul>
-        </nav>
+        <a href="#"><img src="img/logo-r.svg" alt="" id="bbb-logo"></a>
+        <div id="nav-wrapper" class="nav-wrapper">
+            <div class="hamburger" id="js-hamburger">
+              <span class="hamburger__line hamburger__line--1"></span>
+              <span class="hamburger__line hamburger__line--2"></span>
+              <span class="hamburger__line hamburger__line--3"></span>
+            </div>
+            <nav class="sp-nav">
+                <ul>
+                    <li><a href="#choose-reason">BBBが選ばれる理由</a></li>
+                    <li><a href="#student-opinion">受講生の声</a></li>
+                    <li><a href="#school-overview">スクールの概要</a></li>
+                    <li><a href="#">無料体験に申し込む</a></li>
+                </ul>
+            </nav>
+            <div class="black-bg" id="js-black-bg"></div>
+        </div>
     </header>
     <main>
-        <div>
-            <p>話して学ぼう！</p>
-            <p>BBB英会話スクール</p>
-            <a href="#">無料体験はこちら</a>
+        <div class="top-box">
+            <img src="img/mainvisual3.jpeg" alt="" class="top-image">
+            <div class="top-elements">
+                <p>話して学ぼう！</p>
+                <p>BBB英会話スクール</p>
+                <a href="#" class="apply-button">無料体験はこちら</a>
+            </div>
         </div>
         <div id="choose-reason">
             <p class="topic">BBBが選ばれる理由</p>
@@ -50,90 +61,103 @@
         </div>
         <div id="student-opinion">
             <p class="topic">受講生の声</p>
-            <div>
-                <img src="img/icon-student1.png" alt="" class="student-img">
-                <p>○○○さん</p>
-                <p>大学生</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <div class="opinion-boxes">
+                <div class="opinion-box">
+                    <img src="img/icon-student1.png" alt="" class="student-img">
+                    <p>○○○さん</p>
+                    <p>大学生</p>
+                </div>
+                <p class="opinion-element-odd">テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
-            <div>
-                <img src="img/icon-student2.png" alt="" class="student-img">
-                <p>○○○さん</p>
-                <p>会社員</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <div class="opinion-boxes">
+                <div class="opinion-box">
+                    <img src="img/icon-student2.png" alt="" class="student-img">
+                    <p>○○○さん</p>
+                    <p>会社員</p>
+                </div>
+                <p class="opinion-element-even">テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
-            <div>
-                <img src="img/icon-student3.png" alt="" class="student-img">
-                <p>○○○さん</p>
-                <p>自営業</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <div class="opinion-boxes">
+                <div class="opinion-box">
+                    <img src="img/icon-student3.png" alt="" class="student-img">
+                    <p>○○○さん</p>
+                    <p>自営業</p>
+                </div>
+                <p class="opinion-element-odd">テキストテキストテキストテキストテキストテキストテキストテキストテキスト<br>
+                    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
             </div>
         </div>
         <div id="school-overview">
             <p class="topic">スクールの概要</p>
-            <div>
-                <p>レッスン内容</p>
-                <p>LESSON</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            </div>
-            <div>
-                <p>料金プラン</p>
-                <p>PRICE</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            </div>
-            <div>
-                <p>講師のご紹介</p>
-                <p>TEACHER</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-            </div>
-            <div>
-                <p>BBBのQ&A</p>
-                <p>Q&A</p>
-                <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+            <div class="overview-boxes">
+                <div class="overview-box">
+                    <p>レッスン内容</p>
+                    <p>LESSON</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+                <div class="overview-box">
+                    <p>料金プラン</p>
+                    <p>PRICE</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+                <div class="overview-box">
+                    <p>講師のご紹介</p>
+                    <p>TEACHER</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
+                <div class="overview-box">
+                    <p>BBBのQ&A</p>
+                    <p>Q&A</p>
+                    <p>テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+                </div>
             </div>
         </div>
-        <div>
-            <p>まずは無料で、BBBの英会話を試してみませんか？</p>
+        <div class="try-lesson">
+            <h1>まずは無料で、BBBの英会話を試してみませんか？</h1>
             <p>今なら初月のレッスンを特別価格で受講できる割引クーポンをプレゼント！</p>
-            <a href="#choose-reason">無料体験に申し込む</a>
+            <a href="#choose-reason" class="try-lesson-button">無料体験に申し込む</a>
         </div>
     </main>
-    <footer>
-        <div>
-            <p>コース一覧</p>
-            <ul>
-                <li><a href="#">スタンダードプラン</a></li>
-                <li><a href="#">プレミアムプラン</a></li>
-                <li><a href="#">短期集中プラン</a></li>
-                <li><a href="#">日常英会話コース</a></li>
-                <li><a href="#">ビジネス英会話コース</a></li>
-            </ul>
+    <footer id="footer">
+        <div class="footer-elements">
+            <div>
+                <p>コース一覧</p>
+                <ul>
+                    <li><a href="#">スタンダードプラン</a></li>
+                    <li><a href="#">プレミアムプラン</a></li>
+                    <li><a href="#">短期集中プラン</a></li>
+                    <li><a href="#">日常英会話コース</a></li>
+                    <li><a href="#">ビジネス英会話コース</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>講師紹介</p>
+                <ul>
+                    <li><a href="#">講師について</a></li>
+                    <li><a href="#">講師一覧</a></li>
+                    <li><a href="#">講師を探す</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>会社情報</p>
+                <ul>
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">採用情報</a></li>
+                </ul>
+            </div>
+            <div>
+                <p>BBBについて</p>
+                <ul>
+                    <li><a href="#">よくあるご質問</a></li>
+                    <li><a href="#">ご利用規約</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
         </div>
-        <div>
-            <p>講師紹介</p>
-            <ul>
-                <li><a href="#">講師について</a></li>
-                <li><a href="#">講師一覧</a></li>
-                <li><a href="#">講師を探す</a></li>
-            </ul>
-        </div>
-        <div>
-            <p>会社情報</p>
-            <ul>
-                <li><a href="#">会社概要</a></li>
-                <li><a href="#">採用情報</a></li>
-            </ul>
-        </div>
-        <div>
-            <p>BBBについて</p>
-            <ul>
-                <li><a href="#">よくあるご質問</a></li>
-                <li><a href="#">ご利用規約</a></li>
-                <li><a href="#">プライバシーポリシー</a></li>
-                <li><a href="#">お問い合わせ</a></li>
-            </ul>
-        </div>
-        <div>
+        <div id="copyright">
             <p>©︎ BBB English School</p>
         </div>
     </footer>

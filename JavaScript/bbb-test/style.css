@@ -1,35 +1,220 @@
-/* 全体のフォント */
+/* 全体の設定 */
 body {
     font-family: sans-serif;
 }
+a {
+    text-decoration: none;   
+}
+header {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    align-items: center;
+}
+/* .content {
+    max-width: 860px;
+} */
 /* 左上のアイコン */
 #bbb-logo {
     width: 160px;
     height: 60px;
     margin: 20px;
 }
+/* ハンバーガーメニュー */
+#g-nav {
+    position: fixed;
+    z-index: -1;
+    opacity: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background:#FF2A2A;
+    transition: all 0.3s;
+}
+/*アクティブクラスがついたら透過なしにして最前面へ*/
+#g-nav.panelactive {
+    opacity: 1;
+    z-index: 999;
+}
+/*ナビゲーション*/
+#g-nav ul {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#g-nav.panelactive ul {
+    display: block;
+}
+/*リストのレイアウト設定*/
+#g-nav li {
+    list-style: none;
+    text-align: center; 
+}
+#g-nav li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+}
+.nav-apply {
+    margin-top: 25px;
+    border: solid 1px;
+    position: relative;
+    padding: 15px 40px !important;
+    transition: 0.5s;
+}
+.nav-apply::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    bottom: -5px;
+    left: 5px;
+    right: -5px;
+    border-right: solid 1px white;
+    border-bottom: solid 1px white;
+    z-index: -1;
+}
+.nav-apply:hover {
+    color: #FF2A2A !important;
+    background-color: white;
+}
+/*ボタンのためのCSS*/
+.openbtn1 {
+    position:fixed;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    background-color: #FF2A2A;
+}
+/*×に変化*/  
+.openbtn1 span {
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 30px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: white;
+    width: 50%;
+}
+.openbtn1 span:nth-of-type(1) {
+    top:35px; 
+}
+.openbtn1 span:nth-of-type(2) {
+    top:50px;
+}
+.openbtn1 span:nth-of-type(3) {
+    top:65px;
+}
+.openbtn1.active span:nth-of-type(1) {
+    top: 50px;
+    left: 40px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 40%;
+}
+.openbtn1.active span:nth-of-type(2) {
+    opacity: 0;
+}
+.openbtn1.active span:nth-of-type(3) {
+    top: 61px;
+    left: 40px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 40%;
+}
 /* トップ画像 */
 .top-image {
-    width: 1200px;
-    height: 800px;
+    position: absolute;
+    width: 100%;
     margin-right: 0px;
+    margin-left: auto;
+    display: block;
+    opacity: 0;
+    animation: change-img-anim 15s infinite;
 }
-
+/* アニメーション設定 */
+.top-image:nth-of-type(1) {
+    animation-delay: 0s;
+}
+.top-image:nth-of-type(2) {
+    animation-delay: 5s;
+}
+.top-image:nth-of-type(3) {
+    animation-delay: 10s;
+}
+@keyframes change-img-anim {
+    0%{ opacity: 0;}
+    30%{ opacity: 1;}
+    36%{ opacity: 1;}
+    45%{ opacity: 0;}
+    100%{ opacity: 0;}
+}
+/* トップ画面全体 */
 .top-box {
     position: relative;
 }
-
+/* トップ画像 */
+.top-image-box {
+    position: relative;
+    width: 1200px;
+    height: 800px;
+    text-align: right;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0 0 auto;
+}
+/* トップ画像の周りぼかし */
+.top-image-box::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 10px 15px #FFF;
+}
 .top-elements {
     position: absolute;
-    top: 250px;
+    top: 300px;
     left: 100px;
+    /* padding: 300px auto;
+    height: 800px;
+    /* background-image: url(img/mainvisual3.jpeg);
+    background-size: contain;
+    background-position: right center;
+    background-repeat: no-repeat; */
+    /* position: relative; */
 }
+
+/* .top-elements:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    backdrop-filter: blur(3px) brightness(60%);
+} */
+
 
 .top-elements p {
     font-size: 45px;
     font-weight: bold;
-    margin: 5px;
+    /* margin-left: 100px; */
 }
+
+/* .top-element {
+    display: inline-block;
+    margin-top: 300px;
+} */
 
 /* 無料体験はこちらボタン */
 .apply-button {
@@ -45,6 +230,7 @@ body {
     border-radius: 10px;
     position: relative;
     box-shadow: 0 5px #990000;
+    transition: 0.5s;
 }
 /* 無料体験はこちらの右端の逆くの字　！！要理解！！ */
 .apply-button::after {
@@ -59,99 +245,10 @@ body {
     content: "";
 }
 
-/* ハンバーガーメニュー修正必要 */
-.hamburger {
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    width: 50px;
-    height: 40px;
-    cursor: pointer;
-    z-index: 300;
-  }
-  
-  .hamburger__line {
-    position: absolute;
-    width: 50px;
-    height: 3px;
-    right: 0;
-    background-color: #000;
-    transition: all 0.5s;
-  }
-  
-  .hamburger__line--1 {
-    top: 1px;
-  }
-  
-  .hamburger__line--2 {
-    top: 18px;
-  }
-  
-  .hamburger__line--3 {
-    top: 36px;
-  }
-  
-  /*ハンバーガーがクリックされたら*/
-  .open .hamburger__line--1 {
-    transform: rotate(-45deg);
-    top: 11px;
-  }
-  
-  .open .hamburger__line--2 {
-    opacity: 0;
-  }
-  
-  .open .hamburger__line--3 {
-    transform: rotate(45deg);
-    top: 11px;
-  }
-  
-  /* 
-  sp-nav(ナビ)
-  =================================== */
-  .sp-nav {
-    position: fixed;
-    right: -100%; /*ハンバーガーがクリックされる前はWindow右側に隠す*/
-    top: 0;
-    width: 70%; /* 出てくるスライドメニューの幅 */
-    height: 100vh;
-    background-color: #fff;
-    transition: all 0.5s;
-    z-index: 200;
-    overflow-y: auto; /* メニューが多くなったらスクロールできるように */
-  }
-  
-  /*ハンバーガーがクリックされたら右からスライド*/
-  .open .sp-nav {
-    right: 0;
-  }
-  
-  
-  /* 
-  black-bg(ハンバーガーメニュー解除用bg)
-  =================================== */
-  .black-bg {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 5;
-    background-color: #000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s;
-    cursor: pointer;
-    z-index: 100;
-  }
-  
-  /*ハンバーガーメニューが開いたら表示*/
-  .open .black-bg {
-    opacity: 0.3;
-    visibility: visible;
-  }
+.apply-button:hover {
+    transform: scale(1.05);
+}
 
-/* ここまでハンバーガーメニュー */
 
 #choose-reason {
     margin-top: 100px;
@@ -169,19 +266,20 @@ body {
     content: '';
     position: absolute;
     left: 50%;
-    bottom: -15px;/*線の上下位置*/
+    bottom: -15px;
     display: inline-block;
-    width: 70px;/*線の長さ*/
-    height: 3px;/*線の太さ*/
+    width: 70px;
+    height: 3px;
     -webkit-transform: translateX(-50%);
-    transform: translateX(-50%);/*位置調整*/
-    background-color: black;/*線の色*/
+    transform: translateX(-50%);
+    background-color: black;
 }
+
 /* BBBが選ばれる理由 */
 /* BBBが選ばれる理由の赤枠 */
 #reason-field {
     background-color: #FF2A2A;
-    height: 600px;
+    margin: 100px auto;
 }
 /* 上と混ぜてもいいかも */
 .reason-boxes {
@@ -195,27 +293,67 @@ body {
 /* 理由（２つ）全体構成 */
 .reason-box {
     background-color: white;
-    width: 400px;
-    height: 100px;
+    width: 45%;
     display: flex;
     border-radius: 20px;
-    margin: 20px 20px 20px -20px;
-    padding: 20px 40px;
+    margin: 80px 20px 80px -20px;
+    padding: 40px 70px;
 }
+/* 理由のタイトルと文章 */
+.reason-elements {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+}
+
 /* 理由の項目 */
 .reason-element {
     color: #FF2A2A;
     font-weight: bold;
+    font-size: 30px;
 }
 /* 理由の画像 */
-/* .reason-box img {
-    width: 20%;
-    height: 50%;
-} */
+.img-pc {
+    width: 87px;
+    height: 60px;
+    margin: 20px 10px;
+}
+
+.img-teacher {
+    width: 50px;
+    height: 60px;
+    margin: 20px 10px;
+}
 
 .reason-box p {
     text-align: center;
 }
+
+.slideConts {
+    /* width: 500px; */
+    /* height: 400px; */
+    /* margin: 40px auto; */
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+  }
+  .slideContsL {
+    /* background-color: lightpink; */
+    transform: translate(-800px, 0);
+  }
+  .slideContsR {
+    /* background-color: lightblue; */
+    transform: translate(800px, 0);
+  }
+  .slideContsL.show {
+    transform: translate(-50px, 0) !important;
+  }
+  .slideContsR.show {
+    transform: translate(50px, 0) !important;
+  }
+
+
+
 /* 受講生の声 */
 /* 受講生の画像 */
 .student-img {
@@ -229,6 +367,54 @@ body {
     display: flex;
     margin: 50px 150px;
 }
+
+/* アニメーション設定 */
+.scr-target {
+    /* アニメーション開始から終了までの所要時間 */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    /* アニメーションが開始するまでの遅延時間 */
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+    /* アニメーションのループ回数 - infiniteで無限ループ */
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1;
+    /* キーフレームアニメーションで指定したプロパティをアニメーション開始前、終了後に適用するかどうか */
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.scr-target[class*='fadeIn'],
+.scr-target[class*='zoom'] {
+    opacity: 0;
+}
+/* ズームイン */
+@-webkit-keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        -webkit-transform: scale3d(0.3, 0.3, 0.3);
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.anime__zoomIn.is-active {
+    -webkit-animation-name: zoomIn;
+    animation-name: zoomIn;
+}
+
 
 .opinion-box {
     text-align: center;
@@ -275,37 +461,67 @@ body {
     position: absolute;
     border: 12px solid transparent;
     border-left: 12px solid #D7EEFF;
-    top:60px;
+    top: 60px;
     right: -24px;
 }
 
 /* スクールの概要 */
+#school-overview {
+    width: 100%;
+    background: url(img/bg.gif);
+    padding: 50px 10px;
+    animation: scroll-anim 15s linear infinite;
+}
+/* 背景画像アニメーション */
+@keyframes scroll-anim {
+    0% { background-position: 0 0;}
+    100% { background-position: -700px 1400px;}
+}
 
 .overview-boxes {
     display: flex;
     flex-wrap: wrap;
-    width: 90%;
+    margin: 10px 30px;
+    justify-content: center;
 }
 
 .overview-box {
-    width: 45%;
-    height: 250px;
+    width: 450px;
+    /* width: 50%; */
+    height: 200px;
     text-align: center;
-    background-color: gray;
+    background-color: white;
     margin: 20px;
     border-radius: 20px;
+}
+
+.overview-title {
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 20px;
+}
+
+.overview-title-english {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.overview-text {
+    display: inline-block;
+    text-align: left;
+    padding: 10px 95px;
 }
 
 .try-lesson {
     text-align: center;
     margin-top: 100px;
 }
-
-.try-lesson h1 {
+/* 「まずは無料で〜」の装飾 */
+.try-element {
     margin: 0;
-}
-.try-lesson p {
-    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
 }
 /* 無料体験に申し込むボタン */
 .try-lesson-button {
@@ -314,22 +530,156 @@ body {
     padding: 15px 0;
     margin: 30px auto 100px auto;
     background-color: #FF2A2A;
+    border: 2px solid #FF2A2A;
     color: white;
     text-decoration: none;
     /* text-align: center; */
     font-size: 25px;
     border-radius: 30px;
     font-weight: bold;
+    transition: 0.5s;
 }
-
-#footer {
+/* 無料体験に申し込むボタンホバー時 */
+.try-lesson-button:hover {
+    color: #FF2A2A;
+    background-color: white;
+    border: 2px solid #FF2A2A;
+}
+/* フッター */
+footer {
     background-color: #E8E8E8;
 }
 
 .footer-elements {
     display: flex;
+    margin: 0 70px;
 }
 
-#copyright {
+.footer-element {
+    width: 25%;
+    justify-content: space-between;
+    /* text-align: left; */
+    /* margin-left: 40px; */
+}
+
+.footer-element p {
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+.footer-element ul {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.footer-element li {
+    list-style: none;
+    text-decoration: none;
+    margin: 5px auto;
+}
+
+.footer-element a {
+    color: #333333;
+    padding-left: 0;
+}
+
+#copyright p {
     text-align: center;
+    font-size: 10px;
+    padding-bottom: 20px;
+}
+
+@media screen and (max-width: 900px) {
+
+.top-elements {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.top-image-box {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0;
+}
+.top-elements p {
+    font-size: 30px;
+}
+.apply-button {
+    width: 90%;
+    margin: 10px;
+}
+.reason-box {
+    width: 95%;
+}
+.opinion-boxes {
+    flex-direction: column-reverse;
+    margin: 0;
+}
+.opinion-boxes:nth-child(odd) {
+    flex-direction: column-reverse;
+}
+.student-img {
+    display: block;
+    margin: 0 auto;
+}
+.opinion-element-odd {
+    width: 90%;
+    height: 30%;
+}
+.opinion-element-even {
+    width: 90%;
+    height: 30%;
+}
+/* .opinion-element-odd {
+    position: relative;
+    background-color: #D7EEFF;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 20px;
+    width: 500px;
+    height: 100px;
+}
+.opinion-element-even {
+    position: relative;
+    background-color: #D7EEFF;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 20px;
+    width: 500px;
+    height: 100px;
+} */
+.opinion-element-odd:before {
+    content: "";
+    position: absolute;
+    border: 12px solid transparent;
+    border-top: 12px solid #D7EEFF;
+    top: 67px;
+    left: 300px;
+}
+.opinion-element-even:before {
+    content: "";
+    position: absolute;
+    border: 12px solid transparent;
+    border-top: 12px solid #D7EEFF;
+    top: 67px;
+    right: 275px;
+}
+
+.overview-box {
+    width: 95%;
+}
+.overview-text {
+    padding: 10px 0;
+}
+.try-lesson-button {
+    width: 90%;
+}
+.footer-elements {
+    flex-wrap: wrap;
+}
+.footer-element {
+    width: 50%;
+}
+
 }

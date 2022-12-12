@@ -11,9 +11,6 @@ header {
     width: 100%;
     align-items: center;
 }
-/* .content {
-    max-width: 860px;
-} */
 /* 左上のアイコン */
 #bbb-logo {
     width: 160px;
@@ -181,41 +178,18 @@ header {
     right: 0;
     box-shadow: inset 0 0 10px 15px #FFF;
 }
+/* トップ３行全体のレイアウト */
 .top-elements {
     position: absolute;
     top: 300px;
     left: 100px;
-    /* padding: 300px auto;
-    height: 800px;
-    /* background-image: url(img/mainvisual3.jpeg);
-    background-size: contain;
-    background-position: right center;
-    background-repeat: no-repeat; */
-    /* position: relative; */
 }
-
-/* .top-elements:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40%;
-    height: 100%;
-    backdrop-filter: blur(3px) brightness(60%);
-} */
-
-
+/* トップ文のレイアウト */
 .top-elements p {
     font-size: 45px;
     font-weight: bold;
-    /* margin-left: 100px; */
+    text-shadow: 1px 2px 7px #fff;
 }
-
-/* .top-element {
-    display: inline-block;
-    margin-top: 300px;
-} */
-
 /* 無料体験はこちらボタン */
 .apply-button {
     display: block;
@@ -232,7 +206,7 @@ header {
     box-shadow: 0 5px #990000;
     transition: 0.5s;
 }
-/* 無料体験はこちらの右端の逆くの字　！！要理解！！ */
+/* 無料体験はこちらの右端の逆「く」の字 */
 .apply-button::after {
     position: absolute;
     top: 50%;
@@ -244,12 +218,11 @@ header {
     border-top: 2px solid currentColor;
     content: "";
 }
-
+/* 無料体験はこちらボタンのホバー時 */
 .apply-button:hover {
     transform: scale(1.05);
 }
-
-
+/* BBBが選ばれる理由全体レイアウト */
 #choose-reason {
     margin-top: 100px;
 }
@@ -274,18 +247,16 @@ header {
     transform: translateX(-50%);
     background-color: black;
 }
-
 /* BBBが選ばれる理由 */
 /* BBBが選ばれる理由の赤枠 */
 #reason-field {
     background-color: #FF2A2A;
     margin: 100px auto;
 }
-/* 上と混ぜてもいいかも */
 .reason-boxes {
     display: flex;
 }
-
+/* 理由２つ左右対称 */
 .reason-boxes:nth-child(even) {
     flex-direction: row-reverse;
     margin: 20px -40px 20px 20px;
@@ -305,7 +276,6 @@ header {
     text-align: center;
     margin: 20px auto;
 }
-
 /* 理由の項目 */
 .reason-element {
     color: #FF2A2A;
@@ -318,31 +288,25 @@ header {
     height: 60px;
     margin: 20px 10px;
 }
-
 .img-teacher {
     width: 50px;
     height: 60px;
     margin: 20px 10px;
 }
-
+/* 理由の１行目レイアウト */
 .reason-box p {
     text-align: center;
 }
-
+/* スライドアニメーション */
 .slideConts {
-    /* width: 500px; */
-    /* height: 400px; */
-    /* margin: 40px auto; */
     -webkit-transition: .5s;
     -o-transition: .5s;
     transition: .5s;
   }
   .slideContsL {
-    /* background-color: lightpink; */
     transform: translate(-800px, 0);
   }
   .slideContsR {
-    /* background-color: lightblue; */
     transform: translate(800px, 0);
   }
   .slideContsL.show {
@@ -351,9 +315,6 @@ header {
   .slideContsR.show {
     transform: translate(50px, 0) !important;
   }
-
-
-
 /* 受講生の声 */
 /* 受講生の画像 */
 .student-img {
@@ -367,7 +328,6 @@ header {
     display: flex;
     margin: 50px 150px;
 }
-
 /* アニメーション設定 */
 .scr-target {
     /* アニメーション開始から終了までの所要時間 */
@@ -394,7 +354,6 @@ header {
         -webkit-transform: scale3d(0.3, 0.3, 0.3);
         transform: scale3d(0.3, 0.3, 0.3);
     }
-
     100% {
         opacity: 1;
     }
@@ -405,7 +364,6 @@ header {
         -webkit-transform: scale3d(0.3, 0.3, 0.3);
         transform: scale3d(0.3, 0.3, 0.3);
     }
-
     100% {
         opacity: 1;
     }
@@ -414,8 +372,7 @@ header {
     -webkit-animation-name: zoomIn;
     animation-name: zoomIn;
 }
-
-
+/* 受講生ごと全体のレイアウト */
 .opinion-box {
     text-align: center;
 }
@@ -423,8 +380,7 @@ header {
     font-size: 15px;
     margin: 0;
 }
-
-/* なぜoddじゃないとできない？ */
+/* 受講生の声左右対称 */
 .opinion-boxes:nth-child(odd) {
     flex-direction: row-reverse;
 }
@@ -464,7 +420,6 @@ header {
     top: 60px;
     right: -24px;
 }
-
 /* スクールの概要 */
 #school-overview {
     width: 100%;
@@ -477,42 +432,41 @@ header {
     0% { background-position: 0 0;}
     100% { background-position: -700px 1400px;}
 }
-
+/* スクールの概要全体のレイアウト */
 .overview-boxes {
     display: flex;
     flex-wrap: wrap;
     margin: 10px 30px;
     justify-content: center;
 }
-
+/* 概要の項目全体のレイアウト */
 .overview-box {
     width: 450px;
-    /* width: 50%; */
     height: 200px;
     text-align: center;
     background-color: white;
     margin: 20px;
     border-radius: 20px;
 }
-
+/* 概要のタイトル */
 .overview-title {
     font-weight: bold;
     font-size: 25px;
     margin-top: 20px;
 }
-
+/* 概要のタイトルの英語部分 */
 .overview-title-english {
     font-weight: bold;
     margin-top: 10px;
     margin-bottom: 20px;
 }
-
+/* 概要のテキスト部分 */
 .overview-text {
     display: inline-block;
     text-align: left;
     padding: 10px 95px;
 }
-
+/* 無料で試してみませんかの文章全体のレイアウト */
 .try-lesson {
     text-align: center;
     margin-top: 100px;
@@ -533,7 +487,6 @@ header {
     border: 2px solid #FF2A2A;
     color: white;
     text-decoration: none;
-    /* text-align: center; */
     font-size: 25px;
     border-radius: 30px;
     font-weight: bold;
@@ -549,46 +502,38 @@ header {
 footer {
     background-color: #E8E8E8;
 }
-
 .footer-elements {
     display: flex;
     margin: 0 70px;
 }
-
 .footer-element {
     width: 25%;
     justify-content: space-between;
-    /* text-align: left; */
-    /* margin-left: 40px; */
 }
-
 .footer-element p {
     font-weight: bold;
     margin-top: 50px;
 }
-
 .footer-element ul {
     margin: 0;
     padding-left: 10px;
 }
-
 .footer-element li {
     list-style: none;
     text-decoration: none;
     margin: 5px auto;
 }
-
 .footer-element a {
     color: #333333;
     padding-left: 0;
 }
-
+/* コピーライト */
 #copyright p {
     text-align: center;
     font-size: 10px;
     padding-bottom: 20px;
 }
-
+/* レスポンシブ対応 */
 @media screen and (max-width: 900px) {
 
 .top-elements {
@@ -631,41 +576,22 @@ footer {
     width: 90%;
     height: 30%;
 }
-/* .opinion-element-odd {
-    position: relative;
-    background-color: #D7EEFF;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 20px;
-    width: 500px;
-    height: 100px;
-}
-.opinion-element-even {
-    position: relative;
-    background-color: #D7EEFF;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 20px;
-    width: 500px;
-    height: 100px;
-} */
 .opinion-element-odd:before {
     content: "";
     position: absolute;
     border: 12px solid transparent;
     border-top: 12px solid #D7EEFF;
-    top: 67px;
-    left: 300px;
+    top: 100%;
+    left: 50%;
 }
 .opinion-element-even:before {
     content: "";
     position: absolute;
     border: 12px solid transparent;
     border-top: 12px solid #D7EEFF;
-    top: 67px;
-    right: 275px;
+    top: 100%;
+    right: 46%;
 }
-
 .overview-box {
     width: 95%;
 }
